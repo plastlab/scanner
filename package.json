@@ -1,0 +1,38 @@
+{
+  "name": "plastic-tracker",
+  "version": "1.0.0",
+  "main": "expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "build:ios": "eas build --platform ios",
+    "build:ios-preview": "eas build --platform ios --profile preview",
+    "build:ios-production": "eas build --platform ios --profile production",
+    "submit:ios": "eas submit --platform ios",
+    "credentials": "eas credentials"
+  },
+  "dependencies": {
+  "expo": "~49.0.15",
+  "expo-status-bar": "~1.6.0",
+  "react": "18.2.0",
+  "react-native": "0.72.6",
+  "expo-camera": "~13.4.4",
+  "expo-barcode-scanner": "~12.5.3",
+  "expo-web-browser": "~12.3.2",
+  "expo-linking": "~5.0.2",
+  "expo-constants": "~14.4.2",
+  "expo-secure-store": "~12.3.1",
+  "@expo/vector-icons": "^13.0.0",
+  "react-native-web": "~0.19.6"
+},
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@types/react": "~18.2.14",
+    "@types/react-native": "~0.72.2",
+    "typescript": "^5.1.3",
+    "eas-cli": "^3.17.0"
+  },
+  "private": true
+}
