@@ -1,6 +1,7 @@
 import React from 'react';
 import { 
   Home, 
+  Scan, 
   Award, 
   AlertCircle, 
   Users, 

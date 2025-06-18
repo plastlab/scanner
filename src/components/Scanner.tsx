@@ -1,10 +1,11 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   Camera, 
   Scan, 
   CheckCircle, 
   XCircle, 
   Award,
+  Zap,
   Package,
   X
 } from 'lucide-react';
