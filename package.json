@@ -1,38 +1,34 @@
 {
   "name": "plastic-tracker",
-  "version": "1.0.0",
-  "main": "expo/AppEntry.js",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "build:ios": "eas build --platform ios",
-    "build:ios-preview": "eas build --platform ios --profile preview",
-    "build:ios-production": "eas build --platform ios --profile production",
-    "submit:ios": "eas submit --platform ios",
-    "credentials": "eas credentials"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
   "dependencies": {
-  "expo": "~49.0.15",
-  "expo-status-bar": "~1.6.0",
-  "react": "18.2.0",
-  "react-native": "0.72.6",
-  "expo-camera": "~13.4.4",
-  "expo-barcode-scanner": "~12.5.3",
-  "expo-web-browser": "~12.3.2",
-  "expo-linking": "~5.0.2",
-  "expo-constants": "~14.4.2",
-  "expo-secure-store": "~12.3.1",
-  "@expo/vector-icons": "^13.0.0",
-  "react-native-web": "~0.19.6"
-},
-  "devDependencies": {
-    "@babel/core": "^7.20.0",
-    "@types/react": "~18.2.14",
-    "@types/react-native": "~0.72.2",
-    "typescript": "^5.1.3",
-    "eas-cli": "^3.17.0"
+    "lucide-react": "^0.516.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-webcam": "^7.2.0"
   },
-  "private": true
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.10",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.10",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
+  }
 }

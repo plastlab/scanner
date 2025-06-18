@@ -1,10 +1,8 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef } from 'react';
 import { 
   Trash2, 
-  Scan, 
   CheckCircle, 
   Award,
-  Zap,
   Package,
   MapPin,
   Camera,

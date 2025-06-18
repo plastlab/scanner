@@ -3,7 +3,6 @@ import {
   Award, 
   Gift, 
   Star, 
-  TrendingUp,
   Crown,
   Target,
   Zap

@@ -3,10 +3,7 @@ import {
   Award, 
   Recycle, 
   AlertTriangle, 
-  TrendingUp,
-  Package,
-  CheckCircle,
-  XCircle
+  TrendingUp
 } from 'lucide-react';
 import { User, Product } from '../types';
 
@@ -16,10 +13,7 @@ interface DashboardProps {
   onViewChange: (view: string) => void;
 }
 
-export const Dashboard: React.FC<DashboardProps> = ({ user, products, onViewChange }) => {
-  const disposedProducts = products.filter(p => p.disposed);
-  const pendingProducts = products.filter(p => !p.disposed);
-
+export const Dashboard: React.FC<DashboardProps> = ({ user }) => {
   const statsCards = [
     {
       title: 'Points Balance',

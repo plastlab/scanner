@@ -1,53 +1,38 @@
-# Plastic Tracker - iOS Build Solution
+# Plastic Tracker - Web App
 
-A complete React Native Expo project with automated iOS .ipa build capabilities that work without requiring a Mac.
+A React-based web application for tracking plastic waste disposal and earning points for eco-friendly behavior.
 
 ## 🎯 What This Project Provides
 
-✅ **Complete iOS Build Pipeline** - Generate .ipa files without a Mac  
-✅ **Automated Build Scripts** - One-command builds for all platforms  
-✅ **CI/CD Integration** - GitHub Actions workflows included  
-✅ **Multiple Build Profiles** - Development, preview, and production builds  
-✅ **Direct Download Links** - Get .ipa files immediately after build  
-✅ **TestFlight Ready** - Automatic submission capabilities  
-✅ **Cost Effective** - Free tier available, pay-per-build pricing  
+✅ **Web-Based Plastic Tracking** - Track your plastic waste disposal  
+✅ **Points System** - Earn points for proper disposal  
+✅ **Modern UI** - Beautiful, responsive design  
+✅ **GitHub Pages Ready** - Deploy directly to GitHub Pages  
+✅ **Camera Integration** - Scan products and enter bin codes  
+✅ **Dashboard** - View your eco score and statistics  
 
 ## 🚀 Quick Start
 
 ### 1. Install Dependencies
 ```bash
-npm install -g @expo/cli eas-cli
 npm install
 ```
 
-### 2. Login to Expo
+### 2. Start Development Server
 ```bash
-eas login
+npm run dev
 ```
 
-### 3. Configure Your App
-Update `app.json` with your bundle identifier:
-```json
-{
-  "expo": {
-    "ios": {
-      "bundleIdentifier": "com.yourcompany.plastictracker"
-    }
-  }
-}
-```
-
-### 4. Set Up Credentials
+### 3. Build for Production
 ```bash
-eas credentials --platform ios
+npm run build
 ```
 
-### 5. Build Your .ipa File
+### 4. Deploy to GitHub Pages
 ```bash
-npm run build:ios
+npm run build
+# Then push the dist/ folder to GitHub Pages
 ```
-
-**That's it!** Your .ipa file will be ready in 10-15 minutes.
 
 ## 📱 App Features
 
@@ -59,67 +44,21 @@ This Plastic Tracker app includes:
 - **Points System** - Earn points for proper disposal
 - **Modern UI** - Beautiful, responsive design
 
-## 🔧 Build Options
-
-### Command Line
-```bash
-# Development build (internal testing)
-npm run build:ios
-
-# Preview build (TestFlight)
-npm run build:ios-preview
-
-# Production build (App Store)
-npm run build:ios-production
-```
-
-### Automated Scripts
-```bash
-# Linux/Mac
-./scripts/build-ios.sh --profile preview
-
-# Windows
-scripts\build-ios.bat --profile preview
-```
-
-### GitHub Actions
-The project includes automated CI/CD that builds on:
-- Push to main/develop branches
-- Pull requests
-- Manual workflow dispatch
-
-## 📋 Project Structure
-
-```
-project/
-├── App.tsx                 # Main React Native app
-├── app.json               # Expo configuration
-├── eas.json               # EAS Build configuration
-├── package.json           # Dependencies and scripts
-├── scripts/
-│   ├── build-ios.sh      # Linux/Mac build script
-│   └── build-ios.bat     # Windows build script
-├── .github/workflows/
-│   └── build-ios.yml     # GitHub Actions workflow
-├── build-ios.md          # Complete documentation
-└── QUICK_START.md        # Quick start guide
-```
-
 ## 🛠️ Development
 
 ### Local Development
 ```bash
 # Start development server
-npm start
+npm run dev
 
-# Run on iOS simulator (requires Mac)
-npm run ios
+# Build for production
+npm run build
 
-# Run on Android
-npm run android
+# Preview production build
+npm run preview
 
-# Run on web
-npm run web
+# Lint code
+npm run lint
 ```
 
 ### Testing the App
@@ -130,91 +69,43 @@ npm run web
    - Enter bin code "L520RE"
    - Earn points for proper disposal
 
-## 🔐 Environment Setup
+## 📋 Project Structure
 
-### Required Secrets (for CI/CD)
-```bash
-EXPO_TOKEN=your_expo_token
-EXPO_APPLE_TEAM_ID=your_team_id
-EXPO_APPLE_APP_SPECIFIC_PASSWORD=your_app_specific_password
-EXPO_IOS_DIST_P12_PASSWORD=your_p12_password
-EXPO_IOS_DIST_P12_BASE64=base64_encoded_p12
-EXPO_IOS_PROVISIONING_PROFILE_BASE64=base64_encoded_profile
+```
+project/
+├── src/
+│   ├── App.tsx              # Main React app
+│   ├── main.tsx             # App entry point
+│   ├── components/          # React components
+│   ├── hooks/               # Custom React hooks
+│   └── types/               # TypeScript types
+├── index.html               # HTML template
+├── vite.config.ts           # Vite configuration
+├── package.json             # Dependencies and scripts
+└── README.md                # This file
 ```
 
-### Local Environment
-Create `.env` file:
-```bash
-EXPO_TOKEN=your_expo_token
-EXPO_APPLE_TEAM_ID=your_team_id
-EXPO_APPLE_APP_SPECIFIC_PASSWORD=your_app_specific_password
-```
+## 🌐 Deployment
 
-## 📚 Documentation
+### GitHub Pages
+1. Build the project: `npm run build`
+2. Push the `dist/` folder to your GitHub repository
+3. Enable GitHub Pages in your repository settings
+4. Your app will be available at `https://yourusername.github.io/your-repo-name`
 
-- **[Quick Start Guide](QUICK_START.md)** - Get building in 5 minutes
-- **[Complete Build Guide](build-ios.md)** - Detailed documentation
-- **[Expo Documentation](https://docs.expo.dev/)** - Official Expo docs
-- **[EAS Build Guide](https://docs.expo.dev/build/introduction/)** - Build service docs
+### Other Platforms
+- **Vercel**: Connect your GitHub repo for automatic deployment
+- **Netlify**: Drag and drop the `dist/` folder
+- **Any Static Hosting**: Upload the `dist/` folder contents
 
-## 🆘 Troubleshooting
+## 🎉 Features
 
-### Common Issues
-
-**Build Fails with Certificate Error**
-```bash
-eas credentials --platform ios --clear
-eas credentials --platform ios
-```
-
-**Build Times Out**
-```bash
-eas build:list --platform ios
-eas build --platform ios --clear-cache
-```
-
-**Permission Denied**
-```bash
-eas whoami
-eas logout && eas login
-```
-
-### Getting Help
-- 📖 Check the [Complete Documentation](build-ios.md)
-- 🌐 Visit [Expo Documentation](https://docs.expo.dev/)
-- 💬 Join [Expo Community](https://forums.expo.dev/)
-- 🐛 Report issues on GitHub
-
-## 🎉 Success Metrics
-
-This solution provides:
-
-- **Zero Mac Requirement** - Build on any OS
-- **10-15 Minute Builds** - Fast cloud-based builds
-- **Automated Workflows** - CI/CD integration
-- **Multiple Distribution Options** - TestFlight, App Store, direct install
-- **Cost Effective** - Free tier + pay-per-build
-- **Production Ready** - Full iOS app lifecycle support
+- **Responsive Design** - Works on desktop, tablet, and mobile
+- **Modern React** - Built with React 18 and TypeScript
+- **Fast Builds** - Powered by Vite for quick development
+- **Clean Code** - ESLint configured for code quality
+- **Type Safety** - Full TypeScript support
 
 ## 📄 License
 
-This project is provided as-is for educational and development purposes.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test the build process
-5. Submit a pull request
-
-## 📞 Support
-
-For questions about this build solution:
-- 📧 Create an issue on GitHub
-- 💬 Join the Expo community forums
-- 📖 Check the documentation links above
-
----
-
-**Ready to build your first .ipa file?** Start with the [Quick Start Guide](QUICK_START.md)! 
+MIT License - feel free to use this project for your own plastic tracking needs! 

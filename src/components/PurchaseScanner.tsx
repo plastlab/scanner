@@ -4,13 +4,11 @@ import {
   Scan, 
   CheckCircle, 
   Package,
-  Plus,
-  Zap,
   Camera,
   X
 } from 'lucide-react';
 import Webcam from 'react-webcam';
-import { ScanResult, Product } from '../types';
+import { ScanResult } from '../types';
 
 interface PurchaseScannerProps {
   onScan: (barcode: string, action: 'purchase') => ScanResult;
