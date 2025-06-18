@@ -75,8 +75,8 @@ export const Scanner: React.FC<ScannerProps> = ({ onScan, isScanning, onScanning
                   >
                     <X className="w-4 h-4" />
                   </button>
-                </div>
-              ) : (
+                  </div>
+                ) : (
                 <div className="relative mx-auto w-64 h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center overflow-hidden">
                   <div className="text-center space-y-4">
                     <Camera className="w-16 h-16 text-gray-400 mx-auto" />
@@ -84,34 +84,34 @@ export const Scanner: React.FC<ScannerProps> = ({ onScan, isScanning, onScanning
                       <div className="w-48 h-48 border-4 border-dashed border-gray-300 rounded-xl flex items-center justify-center">
                         <Scan className="w-8 h-8 text-gray-400" />
                       </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
+                )}
 
               {/* Scan Button */}
               {!cameraActive && (
-                <button
-                  onClick={handleScan}
-                  disabled={isScanning}
-                  className={`w-full py-4 px-6 rounded-2xl font-semibold text-lg transition-all duration-300 ${
-                    isScanning
-                      ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                      : 'bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:from-emerald-600 hover:to-teal-700 shadow-lg hover:shadow-xl transform hover:scale-105'
-                  }`}
-                >
-                  {isScanning ? (
-                    <div className="flex items-center justify-center space-x-2">
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      <span>Scanning...</span>
-                    </div>
-                  ) : (
-                    <div className="flex items-center justify-center space-x-2">
+              <button
+                onClick={handleScan}
+                disabled={isScanning}
+                className={`w-full py-4 px-6 rounded-2xl font-semibold text-lg transition-all duration-300 ${
+                  isScanning
+                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    : 'bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:from-emerald-600 hover:to-teal-700 shadow-lg hover:shadow-xl transform hover:scale-105'
+                }`}
+              >
+                {isScanning ? (
+                  <div className="flex items-center justify-center space-x-2">
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    <span>Scanning...</span>
+                  </div>
+                ) : (
+                  <div className="flex items-center justify-center space-x-2">
                       <Camera className="w-5 h-5" />
                       <span>Open Camera & Start Scanning</span>
-                    </div>
-                  )}
-                </button>
+                  </div>
+                )}
+              </button>
               )}
             </div>
           ) : (

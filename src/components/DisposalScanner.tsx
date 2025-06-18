@@ -36,17 +36,17 @@ export const DisposalScanner: React.FC<DisposalScannerProps> = ({
     if (scanStep === 'product') {
       // For product scanning, we'll simulate with camera
       setCameraActive(true);
-      onScanningChange(true);
-      
+    onScanningChange(true);
+    
       // Simulate scanning delay - always scan Coca Cola
-      setTimeout(() => {
+    setTimeout(() => {
         const cocaColaBarcode = '7311041030424'; // Coca Cola barcode
         setScannedProduct(cocaColaBarcode);
         setScanStep('trashcan');
         setCameraActive(false);
         onScanningChange(false);
       }, 2000);
-    } else {
+      } else {
       // For trash can, show input instead of camera
       setShowBinInput(true);
     }
@@ -60,10 +60,10 @@ export const DisposalScanner: React.FC<DisposalScannerProps> = ({
     // Simulate processing delay
     setTimeout(() => {
       const result = onScan(`${scannedProduct}|${binCode}`, 'disposal');
-      setScanResult(result);
+        setScanResult(result);
       setShowBinInput(false);
       setBinCode('');
-      onScanningChange(false);
+        onScanningChange(false);
     }, 1000);
   };
 
@@ -191,8 +191,8 @@ export const DisposalScanner: React.FC<DisposalScannerProps> = ({
                       Cancel
                     </button>
                   </div>
-                </div>
-              ) : (
+                  </div>
+                ) : (
                 <div className={`relative mx-auto w-64 h-64 bg-gradient-to-br ${instruction.color} rounded-2xl flex items-center justify-center overflow-hidden`}>
                   <div className="text-center space-y-4">
                     <Icon className="w-16 h-16 text-gray-400 mx-auto" />
@@ -204,29 +204,29 @@ export const DisposalScanner: React.FC<DisposalScannerProps> = ({
                           <Trash2 className="w-8 h-8 text-gray-400" />
                         )}
                       </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
+                )}
 
               {/* Action Button */}
               {!showBinInput && (
-                <button
-                  onClick={handleScan}
+              <button
+                onClick={handleScan}
                   disabled={isScanning || cameraActive}
-                  className={`w-full py-4 px-6 rounded-2xl font-semibold text-lg transition-all duration-300 ${
+                className={`w-full py-4 px-6 rounded-2xl font-semibold text-lg transition-all duration-300 ${
                     isScanning || cameraActive
-                      ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                      : 'bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:from-emerald-600 hover:to-teal-700 shadow-lg hover:shadow-xl transform hover:scale-105'
-                  }`}
-                >
-                  {isScanning ? (
-                    <div className="flex items-center justify-center space-x-2">
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      <span>Scanning...</span>
-                    </div>
-                  ) : (
-                    <div className="flex items-center justify-center space-x-2">
+                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    : 'bg-gradient-to-r from-emerald-500 to-teal-600 text-white hover:from-emerald-600 hover:to-teal-700 shadow-lg hover:shadow-xl transform hover:scale-105'
+                }`}
+              >
+                {isScanning ? (
+                  <div className="flex items-center justify-center space-x-2">
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    <span>Scanning...</span>
+                  </div>
+                ) : (
+                  <div className="flex items-center justify-center space-x-2">
                       {scanStep === 'product' ? (
                         <>
                           <Camera className="w-5 h-5" />
@@ -235,12 +235,12 @@ export const DisposalScanner: React.FC<DisposalScannerProps> = ({
                       ) : (
                         <>
                           <Trash2 className="w-5 h-5" />
-                          <span>{instruction.buttonText}</span>
+                    <span>{instruction.buttonText}</span>
                         </>
                       )}
-                    </div>
-                  )}
-                </button>
+                  </div>
+                )}
+              </button>
               )}
             </div>
           ) : (
